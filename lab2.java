@@ -31,17 +31,61 @@ public class lab2One {
           return false;
    }
 
-    public static void main(String[] args){
-        System.out.println("Running reverse(). Enter a number: ");
-        Scanner input = new Scanner(System.in);
-        int number = input.nextInt();
-       System.out.println(reverse(number));
+   /**
+    2. Write a program that displays the first 100 palindromic prime numbers. Display 10 numbers per line separated by exactly one space.
+ */
 
-       System.out.println("Is it a palindrome? ");
-       if (isPalindrome(number))
-          System.out.println("Yupp!");
-       else
-          System.out.println("Nope!");
+    // displays first 100 pallindromic prime numbers
+   public static void palPrime(){
+    int count = 0; // holds number of prime pallindromes found
+    int number = 1;
+    String[] output;
+
+   while (count < 100){
+      number++;
+      boolean prime = true;
+      if ( isPalindrome(number) ){
+         int timesMultiplied = 0;
+         // number is palindromic. Check if it is a prime number
+         for (int i = 2; i < number && prime; i++){
+
+            for (int multipliedBy = 2; multipliedBy < number; multipliedBy++) {
+               if ( i * multipliedBy == number ) {
+                  timesMultiplied++;
+               }
+            }
+
+         }
+         if (timesMultiplied > 0){
+            prime = false;
+         }
+         else {
+            count++;
+            if (count % 10 == 0){
+               System.out.print("\n");
+            }
+            System.out.print(number + " ");
+         }
+      }
 
     }
+
+}
+
+ public static void main(String[] args){
+     System.out.println("Running reverse(). Enter a number: ");
+     Scanner input = new Scanner(System.in);
+     int number = input.nextInt();
+    System.out.println(reverse(number));
+
+    System.out.println("Is it a palindrome? ");
+    if (isPalindrome(number))
+       System.out.println("Yupp!");
+    else
+       System.out.println("Nope!");
+
+    System.out.println("The first 100 pallindromic prime numbers are: ");
+    palPrime();
+
+ }
 }
