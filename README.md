@@ -37,7 +37,7 @@ The popularity ranking of baby names from 2001-2010 are stored in .txt files. Ea
 Each line contains a ranking, a boy’s name, number of babies with the boy’s name, a girl’s name, and the number of babies with the girl’s name.
 Write a program that prompts the user to enter the year, gender, and followed by a name, and
 displays the ranking of the name for the year. Here is a sample run:
-![sample run](https://github.com/transteph/java-exercises/BabyNamesRanking/samplerun.PNG)
+![sample run](https://github.com/transteph/java-exercises/blob/master/BabyNamesRanking/samplerun.PNG)
 
 ## Pokemon Hangman
 
